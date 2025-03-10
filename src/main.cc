@@ -3,15 +3,21 @@
 #include <string>
 
 int main(){
-    string path1 = "../resources/it.bmp";
-    string path2 = "../out/empty.bmp";
+    string path;
     try {
-        BmpImageReader *reader = new BmpImageReader();
-        reader->loadBmp(path1);
-        reader->printBmp();
+        cout << ">> Enter input BMP file name: ";
+        cin >> path;
+        BmpImageReader reader;
+        reader.loadBmp(path);
+        reader.printBmp();
+        cout << endl;
+        reader.drawCross();
+        reader.printBmp();
+        cout << ">> Enter input BMP file name for save: ";
+        cin >> path;
+        reader.saveBmp(path);
     } catch(const char* msg) {
         std::cerr << msg << '\n';
     }
-    
     return 0;
 }

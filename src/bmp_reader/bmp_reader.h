@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 #define BLACK_COLOR "\033[1;40m "
 #define WHITE_COLOR "\033[1;47m "
@@ -22,6 +23,10 @@ class BmpImageReader {
         ~BmpImageReader();
         void loadBmp(string path);
         void printBmp();
+        void saveBmp(string path_var);
+        void fillPixel(size_t x, size_t y);
+        void drawLine(size_t x_beg, size_t y_beg, size_t x_end, size_t y_end);
+        void drawCross();
     
     private: 
         size_t width, high, bpx, start, end;

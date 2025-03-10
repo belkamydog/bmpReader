@@ -11,6 +11,9 @@
         "ratio": "cpp",
         "tuple": "cpp",
         "ios": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "vector": "cpp",
+        "__split_buffer": "cpp",
+        "string": "cpp"
     }
 }
