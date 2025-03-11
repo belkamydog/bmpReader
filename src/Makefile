@@ -1,10 +1,21 @@
 CC=g++
+WWW=-Wall -Werror -Wextra
+SRC=`find . -name '*.cc'`
+H=`find . -name '*.h'`
+DEST=build/bmp_reader.out
 
-all:
+all: clean app
 
 app:
-	$(CC) bmp_reader/bmp_reader.cc main.cc
-	./a.out
+	mkdir -p build
+	$(CC) $(WWW) $(SRC) -o $(DEST)
+	./$(DEST)
+
+style:
+	clang-format -i $(SRC) $(H);
+
+memcheck:
+	leaks -atExit -- ./$(DEST)
 
 clean:
-	rm -rf *.out
+	rm -rf build

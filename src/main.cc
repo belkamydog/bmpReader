@@ -1,4 +1,4 @@
-#include  "bmp_reader/bmp_reader.h"
+#include  "bmp_image_reader/BmpImageReader.h"
 #include <iostream>
 #include <string>
 
@@ -9,10 +9,10 @@ int main(){
         cin >> path;
         BmpImageReader reader;
         reader.loadBmp(path);
-        reader.printBmp();
-        cout << endl;
+        reader.renderBmp();
+        cout << endl << endl << endl << endl;
         reader.drawCross();
-        reader.printBmp();
+        reader.renderBmp();
         cout << ">> Enter input BMP file name for save: ";
         cin >> path;
         reader.saveBmp(path);
