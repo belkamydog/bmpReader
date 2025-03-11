@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 #define BLACK_COLOR "\033[1;40m "
 #define WHITE_COLOR "\033[1;47m "
